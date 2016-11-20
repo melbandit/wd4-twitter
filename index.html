@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Week 5 Assignment</title>
+
+	<style type="text/css">
+	.highlight { color: blue;}
+	#timeline{
+		color: purple;
+	}
+	#quick-search{
+		color: gray;
+	}
+	#detailed-search{
+		color: #006eff;
+	}
+	body{
+		font-family: "Helvetica"; 
+		background-color: lightpink;
+	}
+	p{ 
+		font-weight: bold;
+		padding: 0;
+		margin: 0;
+	}
+	li{
+		list-style-type: none;
+		background: rgba(225,234,225,0.5);
+		margin: 2px;
+		padding: 5px;
+		border: 1px solid rgba(197,41,132,0.5);
+		box-shadow: 1px 1px 1px black;
+	}
+	</style>
+</head>
+<body>
+
+	<div>
+		<form name="timeline">
+			Twitter handle: <input id="timeline-search-input" name="screen_name" type="text"/>
+			<button id="timeline-submit-button" type="submit">Get Timeline</button>
+			<div class="results" id="timeline">
+				<ul>
+				</ul>
+			</div>
+		</form>
+	</div>
+
+	<hr/>
+
+	<div>
+		<form name="search">
+			Query: <input id="quick-search-input" name="q" type="text" />
+			<button id="quick-search-submit" type="submit">Quick Search</button>
+			<div class="results" id="quick-search">
+				<ul>
+				</ul>
+			</div>
+		</form>
+	</div>
+
+	<hr/>
+
+	<div>
+		<form name="search">
+			Query: <input id="detailed-search-input" name="q" type="text" />
+			Limit: <input id="limit" name="count" type="number" />
+			Result Type:
+			<select id="search-result-type" name="result_type">
+				<option value="mixed">Default</option>
+				<option value="popular">Most popular</option>
+				<option value="recent">Most recent</option>
+			</select>
+			<button id="detailed-search-submit" type="submit">Custom Search</button>
+			<div class="results" id="detailed-search">
+				<ul>
+				</ul>
+			</div>
+		</form>
+	</div>
+
+	<hr/>
+
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="js/week5.js"></script>
+</body>
+</html>

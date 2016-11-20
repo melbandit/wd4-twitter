@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script>
+TwitterAPi = (function(){
+	function diplayTweets(){
+		//...
+		///for each(tweet){
+		// var highlight = RegExModule.highlightURL(tweet);
+		//}
+	}
+})();
+	
+var RegExModule = (function() {
+	function matchURL(string) {
+
+	}
+	function highlightTweet(tweet, word){
+		// var processed = highlightURL(tweet);
+		//processed = higlightTwitterHandle(processed);
+		//processed = higlightKeyword(processed, keyword);
+		return processed;
+	}
+	function highlightKeword(string, word){
+
+	}
+	function highlightTwitterHandle(tweet){
+
+	}
+	function highlightURL(string) {
+		//match a URL in the string, and then modify the strong to turn the URL into a hyperlink
+		var newString = matchURL(string);
+		//process the matched URL...
+		//and then return the new string:
+		return newString;
+	}
+	function matchEmail(string){
+		var emailRE = /(.+@.+\..+)/;
+		var matched = string.match(emailRE);
+		//"bob@bob.com".match(emailRE);
+		return matched;
+	}
+	function init(){
+
+	}
+	return {
+		init: init,
+		matchEmail: matchEmail,
+		matchURL: matchURL,
+		highlightURL: highlightURL
+	}
+
+})();
+$document.ready(function() {
+	RegExModule.init();
+});
+
+</script>
+<!-- <script type="text/javascript" href="regex.js"></script> -->
+</body>
+</html>
