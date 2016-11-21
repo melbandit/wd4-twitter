@@ -5,7 +5,7 @@
 
 	<style type="text/css">
 	.highlight { color: blue;}
-/*	#timeline{
+	#timeline{
 		color: purple;
 	}
 	#quick-search{
@@ -13,7 +13,7 @@
 	}
 	#detailed-search{
 		color: #006eff;
-	}*/
+	}
 	body{
 		font-family: "Helvetica"; 
 		background-color: lightpink;
@@ -31,16 +31,15 @@
 		border: 1px solid rgba(197,41,132,0.5);
 		box-shadow: 1px 1px 1px black;
 	}
-
 	</style>
 </head>
 <body>
 
 	<div>
 		<form name="timeline">
-			Twitter handle: <input name="screen_name" type="text"/>
-			<button type="submit">Get Timeline</button>
-			<div class="results">
+			Twitter handle: <input id="timeline-search-input" name="screen_name" type="text"/>
+			<button id="timeline-submit-button" type="submit">Get Timeline</button>
+			<div class="results" id="timeline">
 				<ul>
 				</ul>
 			</div>
@@ -51,9 +50,9 @@
 
 	<div>
 		<form name="search">
-			Query: <input name="q" type="text" />
-			<button type="submit">Quick Search</button>
-			<div class="results">
+			Query: <input id="quick-search-input" name="q" type="text" />
+			<button id="quick-search-submit" type="submit">Quick Search</button>
+			<div class="results" id="quick-search">
 				<ul>
 				</ul>
 			</div>
@@ -61,19 +60,19 @@
 	</div>
 
 	<hr/>
-
+_week5
 	<div>
 		<form name="search">
-			Query: <input name="q" type="text" />
-			Limit: <input name="count" type="number" />
+			Query: <input id="detailed-search-input" name="q" type="text" />
+			Limit: <input id="limit" name="count" type="number" />
 			Result Type:
-			<select name="result_type">
+			<select id="search-result-type" name="result_type">
 				<option value="mixed">Default</option>
 				<option value="popular">Most popular</option>
 				<option value="recent">Most recent</option>
 			</select>
-			<button type="submit">Custom Search</button>
-			<div class="results">
+			<button id="detailed-search-submit" type="submit">Custom Search</button>
+			<div class="results" id="detailed-search">
 				<ul>
 				</ul>
 			</div>
@@ -84,6 +83,6 @@
 
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-<script type="text/javascript" src="js/week6.js"></script>
+<script type="text/javascript" src="js/week5.js"></script>
 </body>
 </html>
