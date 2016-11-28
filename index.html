@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Week 5 Assignment</title>
+	<title>Week 7 Assignment</title>
 
 	<style type="text/css">
 	.highlight { color: blue;}
@@ -53,10 +53,24 @@
 	</style>
 </head>
 <body>
+	<div class="search-bar">
+	    Search Google: <form class="navbar-form navbar-left" role="search" name="googlesearch">
+	    <div class="form-group">
+	        <input id="search-input" type="search" name="googlesearch" placeholder="Search">
+	    </div>
+	    <button id="search-submit-button" type="submit" class="">Search</button>
+	    </form>
+	   <!--  Search Google: <input type="search" name="googlesearch"> -->
+	</div>
+	<div id="map"></div>
+	<h2>Results:</h2>
+	<ul id="search-list"></ul>
 
+	<hr/>
+	
 	<div>
 		<form name="timeline">
-			Twitter handle: <input name="screen_name" type="text"/>
+			Twitter handle: <input name="screen_name" type="text" />
 			<button type="submit">Get Timeline</button>
 			<div class="results">
 				<ul>
@@ -100,18 +114,7 @@
 
 	<hr/>
 
-	<div class="search-bar">
-	    Search Google: <form class="navbar-form navbar-left" role="search" name="googlesearch">
-	    <div class="form-group">
-	        <input id="search-input" type="search" name="googlesearch" placeholder="Search">
-	    </div>
-	    <button id="search-submit-button" type="submit" class="">Search</button>
-	    </form>
-	   <!--  Search Google: <input type="search" name="googlesearch"> -->
-	</div>
-	<div id="map"></div>
-	<h2>Results:</h2>
-	<ul id="search-list"></ul>
+	
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAcLGWpqaelBOUSGmNWPShmfjFaIxkISSs&callback=GoogleMapApi.initMap&libraries=places" async defer></script>
 <!-- <script src="https://code.jquery.com/jquery-2.2.4.min.js" async defer></script> -->

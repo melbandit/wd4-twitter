@@ -92,7 +92,7 @@ var TwitterApi = (function(options) {
         });
     }
     function displayTweets($results, data, keyword) {
-        console.log("displayTweets", $results);
+        // console.log("displayTweets", $results);
         $results.empty();
         for (var s in data) {
             var status = data[s];
@@ -102,9 +102,9 @@ var TwitterApi = (function(options) {
             var txtNode_SN = document.createElement('p');
             var txtNode = document.createElement('span');
             if(keyword != null){
-                console.log(status.text, keyword);
+                // console.log(status.text, keyword);
                 var highlightedKeyword = RegExModule.highlightTweet(status.text, keyword);
-                console.log("highlightedKeyword:", highlightedKeyword);
+                // console.log("highlightedKeyword:", highlightedKeyword);
             } else{
                 txtNode.innerHTML = txt;
             }
@@ -151,7 +151,7 @@ var RegExModule = (function() {
         var processed = highlightTwitterHandle(processed);
         //console.log("processed2:", processed);
         var processed = highlightKeyword(processed, keyword);
-        console.log("processed3:", processed);
+        // console.log("processed3:", processed);
         return processed;
     }
     function highlightKeyword(string, keyword){
@@ -169,17 +169,13 @@ var RegExModule = (function() {
 
         var matched = tweet.match(twitterHandleRE);
 
-        var newString = tweet.replace(matched, '<a class="highlight" href="http://twitter.com/' + matched + '" target="_blank">' + matched + '</a>');
+        if (matched) {
+            for (var i = 0; i < matched.length; i++) {
+                tweet = tweet.replace(matched[i], '<a class="highlight" href="http://twitter.com/' + matched[i] + '" target="_blank">' + matched[i] + '</a>');
+            }
+        }
 
-        // for(var s in matched){
-        //     var status = matched[s];
-        //     var newString ='<a class="highlight" href="http://twitter.com/' + status + '">' + status + '</a>';
-        // }
-        // $regex = "/(?<=^|(?<=[^a-zA-Z0-9-_\.]))@([A-Za-z]+[A-Za-z0-9]+)/i";
-        // preg_replace($regex, "<a href='http://twitter.com/$1'>@$1</a>", $string);
-        //newString = newString.replace(twitterHandleRE, "<a href='http://twitter.com/$1'>@$1</a>", tweet);
-        return newString;
-
+        return tweet;
     }
     function highlightURL(string) {
         //match a URL in the string, and then modify the strong to turn the URL into a hyperlink
