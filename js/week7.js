@@ -341,6 +341,7 @@ var GoogleMapApi = (function(options){
         //         title: '@' + aLatLng.user.screen_name + ': ' + aLatLng.text
         //     })
         // }
+        //marker.empty();
         var marker = new google.maps.Marker({
             position: aLatLng,
             map: map,
